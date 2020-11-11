@@ -83,3 +83,54 @@ print(g)
 
 f = 'name : ' + format(name, 's') + ", age : " + format(age, 'd')  # s : string, d : digit
 print(f)  # 이 방법은 귀찮고 복잡해서 나머지 방법을 선호한다.
+
+l = [1, 2, 3, 4, 5, 6]
+print(l[::-1])  # 역 방향으로 읽는다. a :: b b는 간격으로 한칸씩 뒤에서부터의 의미이다. a는 시작 지점이다.
+print(l[5:2:-1])  # index=5부터 2 초과까지 1 간격으로 역순으로 출력한다.
+
+del l[1]  # list의 data를 삭제한다.
+print(l)
+
+l = [1, 12, 123, 1234]
+
+l[0:2] = [10, 20]  # index=0~1을 10과 20으로 바꾼다.
+print(l)
+
+l[0:2] = [100]  # index=0~1([10, 20])을 [100]으로 바꾼다.
+print(l)  # data가 3개로 줄어든다.
+
+l[0:2] = []  # slicing을 이용해 del.
+print(l)
+
+l[0:] = []  # slicing을 이용해 전체 data del.
+print(l)
+
+l = [1, 12, 123, 1234]
+l[1:1] = [456]  # 중간에 삽입.
+print(l)
+
+l[5:] = [456]
+print(l)
+
+l[:0] = ['처음']  # 첫 자리에 data 추가.
+print(l)
+
+l[2:2] = ['새로운', '추가']  # 여러 개의 data를 삽입.
+print(l)
+
+a = [1, 2, 3, 4, 5, 6]
+a.insert(2, ['a', 'b', 'c']) # slicing과 다르게 리스트로도 넣을 수 있다.
+print(a)
+a.append('이름') # 마지막에 추가.
+print(a)
+a.reverse() # 역순 정렬
+print(a)
+
+try :
+    a.remove('d')
+except ValueError as e :
+    print('Error') # remove는 값이 없을 때 Error가 발생한다.
+
+a.remove(['a', 'b', 'c'])
+a.remove('이름')
+print(a)
