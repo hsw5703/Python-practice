@@ -10,3 +10,4 @@ print(list_input)
 list_input.reverse()
 str_input = ''.join(list_input)
 print(f'출력> {str_input}')
+
